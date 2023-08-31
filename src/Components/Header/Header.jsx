@@ -1,12 +1,9 @@
 import React from "react";
-import "./Header.css";
-function Header() {
+import "./Header.scss";
+function Header({ title }) {
   return (
     <>
-      <div className="header-component">
-        <div>logo</div>
-        <div>header nav</div>
-      </div>
+      <div className="title">{title}</div>
     </>
   );
 }

@@ -1,9 +1,18 @@
 import React from "react";
 import "./AllEmployeesPage.css";
+import SideNav from "../../Components/SideNav/SideNav";
+import Header from "../../Components/Header/Header";
 function AllEmployeesPage() {
   return (
     <>
-      <h1>ALL EMPLOYEES</h1>
+       <div className="app-container">
+        <SideNav />
+        <div className="main-container">
+          <Header title="All employees" />
+         
+         
+        </div>
+      </div>
     </>
   );
 }

@@ -1,17 +1,16 @@
 import React from "react";
 import "./NotAvailable.css";
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
+
+import SideNav from "../../Components/SideNav/SideNav";
 function NotAvailable() {
   return (
     <>
-      <Header />
-      <div className="message-container">
-        <div className="message">
-      Not available page 
+      <div className="app-container">
+        <SideNav />
+        <div className="message-container">
+          <div className="message">Not available page</div>
         </div>
       </div>
-      <Footer/>
     </>
   );
 }

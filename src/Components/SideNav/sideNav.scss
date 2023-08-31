@@ -1,0 +1,29 @@
+@import '../../styles/main';
+.main-nav {@include main-nav(column);}
+
+.menu{
+  @include menu;
+}
+.copy-write {
+    writing-mode: vertical-rl;
+    /* Écriture de haut en bas, de droite à gauche */
+    transform: rotate(180deg);
+    /* Rotation pour corriger l'orientation */
+    font-size: 0.9rem;
+}
+    /* Styles pour les petits écrans */
+    @media (max-width: $small-screen) {
+        .main-nav {@include main-nav-mobile;
+           }
+        .copy-write {
+            writing-mode: vertical-lr;
+            /* Écriture de haut en bas, de droite à gauche */
+            transform: rotate(270deg);
+            /* Rotation pour corriger l'orientation */
+            font-size: 0.9rem;
+            
+        }
+        .menu{
+            @include menu-mobile;
+        }
+      }

@@ -1,0 +1,156 @@
+@import '../../styles/main';
+input{
+  @include form-fileds();
+}
+select{
+    @include form-fileds();
+
+}
+.full-width-select{
+  @extend select;
+  width:100%,
+}
+
+
+.error {
+  color: $error-color;
+  font-size: 0.75rem;
+  text-align: left;
+  margin-top: 0.25rem;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+
+
+form {
+  width: 95%;
+  max-width: 400px;
+  margin: 0 auto;
+  & label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin: 1rem 0 0.2rem;
+  }
+}
+
+
+
+
+
+
+
+button {
+    @include button($third-color)
+    }
+
+
+
+
+.date-field {
+  width: 80%;
+}
+
+.react-datepicker__input-container {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.react-datepicker__day {
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.react-datepicker__month-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(206, 206, 219);
+}
+
+.react-datepicker__day-names {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: auto;
+  background-color: rgb(64, 64, 112);
+}
+
+.react-datepicker__week {
+  display: flex;
+  flex-direction: row;
+}
+
+.react-datepicker__month {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-form {
+  max-height: 100vh;
+  /* Remplacez 300px par la hauteur souhaitée */
+  width: 100vw;
+  overflow-y: auto;
+  /* Ajoute une barre de défilement verticale si nécessaire */
+}
+
+//advancedForm
+Form{
+    width: 95%;
+   max-width: 400px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+  
+}
+
+.input-field{
+    @include form-fileds();
+  }
+  .select_field{
+      @include form-fileds();
+  
+  }
+
+  .lab-and-field{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    & label{
+        font-size: 1rem;
+        font-weight: bold;
+        display: inline;
+        text-align: left;
+        margin: 1rem 0 0.2rem;
+        width: 30%;
+    } & Field{
+width: 66%;
+    }
+    & .error{
+        color: $error-color;
+        font-size: 0.75rem;
+        text-align: left;
+        margin-top: 0.25rem;
+    }
+
+  }
+  .fields-groupe{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .submit-button{ 
+    @extend button;
+    margin-left: calc(2%);
+   width: 95%;
+  }

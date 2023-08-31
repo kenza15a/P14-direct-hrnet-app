@@ -1,12 +1,11 @@
 import React from "react";
-import "./Footer.css";
+import "./Footer.scss";
 function Footer() {
   return (
     <>
-      <div className="footer font-face-gm">
-        <h3>HR NET</h3>
-        <h5>© All rights reserved 2023</h5>
-      </div>
+      <footer>
+        <p>&copy; {new Date().getFullYear()} HRNET Tous droits réservés.</p>
+      </footer>
     </>
   );
 }

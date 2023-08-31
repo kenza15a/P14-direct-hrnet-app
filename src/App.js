@@ -1,5 +1,5 @@
 
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FormPage from './Pages/FormPage/FormPage';
 import AllEmployeesPage from './Pages/AllEmployeesPage/AllEmployeesPage';

@@ -7,6 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --text-primary:#80AF84;
+  --bg-primary:#80AF84;
+  font-size: 0.8em;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -15,6 +21,6 @@ code {
 @font-face {
   font-family: "remBold";
   src: local("remBold"),
-    url("./fonts/rem/Roboto-Bold.ttf") format("truetype");
+    url("./fonts/rem/Roboto-Medium.ttf") format("ttf");
   font-weight: bold;
 }

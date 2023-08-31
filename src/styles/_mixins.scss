@@ -1,0 +1,147 @@
+@import './variables';
+//MAIN NAV 
+@mixin main-nav($display-type) {
+    display: flex;
+    flex-direction: $display-type;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    height: 100%;
+    width: 3vw;
+    background-color: $primary-color;
+    & a{
+        font-weight: bold;
+        color: var(--bg-primary)
+    }
+    &-item {
+        text-decoration: none;
+        margin-right: 0.5rem;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+    &-logo {
+        display: flex;
+        align-items: center;
+        color: var(--text-primary)
+          
+    }&-logo-image {
+        max-width: 100%;
+        width: 140px;
+    }
+}
+@mixin main-nav-mobile{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: 100vw;
+    height: 5vw;
+   
+    position: fixed;
+    bottom: 0;
+    background-color: $primary-color;
+    & a{
+        font-weight: bold;
+        color: var(--bg-primary)
+    }
+    &-item {
+        text-decoration: none;
+        margin-right: 0.5rem;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+    &-logo {
+        display: flex;
+        align-items: center;
+        color: var(--text-primary)
+          
+    }&-logo-image {
+        max-width: 100%;
+        width: 140px;
+    }
+
+}
+@mixin menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & a .icon {
+        width: 70%;
+        height: 70%;
+        & img {
+            width: 4rem;
+            height: 4rem;
+            object-fit: contain;
+        }
+    }
+}
+@mixin menu-mobile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    & a .icon {
+        width: 50%;
+        height: 50%;
+        & img {
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: contain;
+        }
+    }
+}
+//FORM
+
+@mixin form-fileds(){
+    width: 80%;
+    padding: 0.65rem 0.5rem;
+    font-size: 1rem;
+    color: $secondary-color;
+    border: 0.1rem solid $primary-color;
+    background-color:  $fields_bg-color;
+    border-radius: 10px;
+    outline: none;
+    &:focus{
+        border-color:  $secondary-color;
+        background-color:$third-color;
+        color: white;
+    }
+    &::placeholder {
+        color: #a0aec0;
+      }
+    &.input-error{
+        border: 0.1rem solid $error-color;
+
+    }
+    &[type="checkbox"] {
+        width: fit-content;
+        margin-right: 0.5rem;
+        transform: scale(1.25);
+      }
+}
+@mixin button($background-color){
+    display: block;
+    margin: 1rem 0;
+    padding: 0.35rem 0.5rem;
+    background-color: $background-color;
+    color: #1a202c;
+    border: none;
+    border-radius: 3px;
+    width: 80%;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+        color: white;
+        background-color:$secondary-color;
+    }
+
+}
+

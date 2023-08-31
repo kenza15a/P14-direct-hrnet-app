@@ -1,0 +1,35 @@
+
+.input-field{
+    @include form-fileds();
+  }
+  .select_field{
+      @include form-fileds();
+  
+  }
+
+  .lab-and-field{
+    display: flex;
+    gap: 2rem;
+    & label{
+        font-size: 1rem;
+        font-weight: bold;
+        display: inline;
+        text-align: left;
+        margin: 1rem 0 0.2rem;
+        width: 30%;
+    } & Field{
+width: 66%;
+    }
+    & .error{
+        color: $error-color;
+        font-size: 0.75rem;
+        text-align: left;
+        margin-top: 0.25rem;
+    }
+
+  }
+  .fields-groupe{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }

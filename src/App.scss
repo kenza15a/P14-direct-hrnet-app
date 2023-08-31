@@ -1,0 +1,55 @@
+@import "./styles/main";
+.App {
+    text-align: center;
+  
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app-container {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "sideBar  Main";
+      height: 100vh;
+  }
+  
+  .font-face-gm {
+    font-family: "GoldmanBold";
+  }
+  
+  .main-container {
+    height:90%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 4rem;
+  
+  }
+
+   /* Styles pour les petits écrans */
+  @media (max-width: $small-screen) {
+    .app-container {
+        display: flex;
+        flex-direction:column-reverse;
+    }
+    .main-container {
+        height:90%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding-top: 4rem;
+      
+      }
+    
+      
+  }
