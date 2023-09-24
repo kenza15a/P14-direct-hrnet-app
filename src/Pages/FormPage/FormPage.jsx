@@ -1,21 +1,24 @@
-import React from "react";
-import "./FormPage.css";
+import React, { useEffect } from "react";
+import "./FormPage.scss";
 import SideNav from "../../Components/SideNav/SideNav";
-import FormComponent from "../../Components/Form/FormComponent";
 import Header from "../../Components/Header/Header";
-import EmployeeFormComponent from "../../Components/Form/EmployyesFormComponent";
-
+import EmployeesForm from "../../Components/Form/EmployeesForm";
+import { useFormData } from "../../context/EmployeeDataProvider";
+import AllEmployeesTable from "../../Components/Table/AllEmployeesTable";
 function FormPage() {
+  const {formDataArray} = useFormData();
+  console.log("formDataArray in fomPage:", formDataArray);
+
   return (
-    <>
+  
       <div className="app-container">
         <SideNav />
         <div className="main-container">
           <Header title="Create an employee" />
-          <EmployeeFormComponent />
+          <EmployeesForm />
         </div>
       </div>
-    </>
+    
   );
 }
 

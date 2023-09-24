@@ -1,0 +1,25 @@
+@import '../../styles/main';
+.employees-table {
+    table-layout: fixed;
+    width: 80%;
+    margin: auto;
+border-collapse: collapse;
+ & thead{
+    color:$primary-color;
+    cursor: pointer;
+ }
+ & .employee-cell{
+    border: solid 1px $third-color;
+text-align: left;
+font-size: 0.9rem;
+padding: 1rem;
+
+
+ }
+ 
+}
+th {
+    & span{
+        margin-right: 0.6rem;
+    }
+}

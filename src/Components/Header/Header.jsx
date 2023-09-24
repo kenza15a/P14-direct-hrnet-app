@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.scss";
+
 function Header({ title }) {
   return (
     <>

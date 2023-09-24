@@ -3,23 +3,20 @@ import React from "react";
 import icon2 from "../../assets/img/icons/employees.png";
 import icon1 from "../../assets/img/icons/Form.png";
 import "./sideNav.scss";
+import { Link } from "react-router-dom";
 function SideNav() {
   return (
     <>
       <div className="main-nav">
         <div className="menu">
-          <a href="/">
-            <div className="icon">
+          <Link to="/"><div className="icon">
               {" "}
               <img alt="Form Page " src={icon1}></img>
-            </div>
-          </a>
-          <a href="/allEmployees">
-            <div className="icon">
-              {" "}
+            </div></Link>
+         <Link to="/allEmployees"><div className="icon">
               <img alt="employees page " src={icon2}></img>
-            </div>
-          </a>
+            </div></Link>
+        
         </div>
         <div className="copy-write">
           <p>&copy; {new Date().getFullYear()} HRNET </p>

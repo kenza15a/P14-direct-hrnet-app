@@ -1,9 +1,5 @@
 @import '../../styles/main';
 .title{
-    font-size: 4rem;
-    color:$primary-color;
-    font-weight:500 ;
-    text-align: left;
-    margin-left: 2em;
+  @include page-title;
   
 }

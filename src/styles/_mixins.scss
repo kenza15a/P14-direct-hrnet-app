@@ -97,10 +97,18 @@
         }
     }
 }
+@mixin page-title{
+font-size: 4rem;
+color:$primary-color;
+font-weight:600 ;
+text-align: left;
+margin-left: 3em;
+}
+
 //FORM
 
 @mixin form-fileds(){
-    width: 80%;
+    width: 90%;
     padding: 0.65rem 0.5rem;
     font-size: 1rem;
     color: $secondary-color;

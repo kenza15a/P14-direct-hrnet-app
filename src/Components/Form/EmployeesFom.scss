@@ -4,7 +4,7 @@ input{
 }
 select{
     @include form-fileds();
-
+   
 }
 .full-width-select{
   @extend select;
@@ -138,9 +138,10 @@ width: 66%;
     }
     & .error{
         color: $error-color;
-        font-size: 0.75rem;
+        font-size: 1rem;
         text-align: left;
         margin-top: 0.25rem;
+        margin-left: -1;
     }
 
   }
