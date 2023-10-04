@@ -1,0 +1,9 @@
+@import '../../styles/main';
+h4 {
+    color: brown;
+}
+.addEmployees{
+    @include button($primary-color);
+    width:fit-content;
+    padding: 1rem;
+}

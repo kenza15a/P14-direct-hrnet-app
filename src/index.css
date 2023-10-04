@@ -19,8 +19,22 @@ code {
 }
 
 @font-face {
-  font-family: "remBold";
-  src: local("remBold"),
-    url("./fonts/rem/Roboto-Medium.ttf") format("ttf");
+  font-family: "lato";
+  src: local("lato"),
+    url("./fonts/Lato-Regular.ttf")  format("truetype");
   font-weight: bold;
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"),
+    url("./fonts/rem/Roboto-Medium.ttf")  format("truetype");
+    font-weight: 200;
+
+}
+@font-face {
+  font-family: "Lato-italic";
+  src: local("Latoitalic"),
+    url("./fonts/Lato-LightItalic.ttf")  format("truetype");
+    font-weight: 200;
+
 }

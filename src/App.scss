@@ -18,13 +18,14 @@
     grid-template-columns: max-content 1fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
-    grid-template-areas:
-      "sideBar  Main";
-      height: 100vh;
+    grid-template-areas:"sideBar  Main";
+    height: 90VH;
+    margin-top: 0%;
+  padding-top: 0%;
   }
   
   .font-face-gm {
-    font-family: "GoldmanBold";
+    font-family: "brico";
   }
   
   .main-container {
@@ -41,6 +42,7 @@
     .app-container {
         display: flex;
         flex-direction:column-reverse;
+        
     }
     .main-container {
         height:90%;

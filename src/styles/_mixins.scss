@@ -72,6 +72,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: max-content;
+    height: 100vh;
     & a .icon {
         width: 70%;
         height: 70%;
@@ -98,24 +100,34 @@
     }
 }
 @mixin page-title{
-font-size: 4rem;
+font-size:3.7rem;
 color:$primary-color;
-font-weight:600 ;
+font-weight:900 ;
 text-align: left;
-margin-left: 3em;
+font-family: 'Lato';
+margin:1rem auto;
 }
-
+@mixin page-subtitle{
+  
+        font-family: 'Roboto';
+        color: black;
+        font-size: 2rem;
+        margin: 0rem auto;
+        font-family: 'Latoitalic';
+       
+}
 //FORM
 
 @mixin form-fileds(){
     width: 90%;
-    padding: 0.65rem 0.5rem;
+    padding: 1rem 1rem;
     font-size: 1rem;
     color: $secondary-color;
-    border: 0.1rem solid $primary-color;
+    border: 0.1rem solid #a0aec0;
     background-color:  $fields_bg-color;
     border-radius: 10px;
     outline: none;
+    margin-bottom: 1rem;
     &:focus{
         border-color:  $secondary-color;
         background-color:$third-color;
@@ -139,10 +151,11 @@ margin-left: 3em;
     margin: 1rem 0;
     padding: 0.35rem 0.5rem;
     background-color: $background-color;
-    color: #1a202c;
+    color: #ffffff;
     border: none;
     border-radius: 3px;
-    width: 80%;
+    min-width: 4rem;
+    width: fit-content;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
@@ -153,3 +166,9 @@ margin-left: 3em;
 
 }
 
+  .button-group{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+  }
+  

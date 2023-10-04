@@ -5,6 +5,7 @@ function Header({ title }) {
   return (
     <>
       <div className="title">{title}</div>
+     
     </>
   );
 }

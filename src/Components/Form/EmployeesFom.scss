@@ -51,49 +51,18 @@ button {
     @include button($third-color)
     }
 
-
+.tableControls{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80vw;
+}
 
 
 .date-field {
   width: 80%;
 }
 
-.react-datepicker__input-container {
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.react-datepicker__day {
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-
-}
-
-.react-datepicker__month-container {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(206, 206, 219);
-}
-
-.react-datepicker__day-names {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
-  margin: auto;
-  background-color: rgb(64, 64, 112);
-}
-
-.react-datepicker__week {
-  display: flex;
-  flex-direction: row;
-}
-
-.react-datepicker__month {
-  display: flex;
-  flex-direction: column;
-}
 
 .employee-form {
   max-height: 100vh;
@@ -149,9 +118,29 @@ width: 66%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    text-align: left;
+    h2{
+      font-size: 1.8rem;
+      font-weight: 400;
+      font-family: 'Lato'
+    }
   }
   .submit-button{ 
     @extend button;
     margin-left: calc(2%);
    width: 95%;
+  }
+
+  .button-group button{
+    @include button($primary-color) ;
+    padding:1rem;
+    font-size: 1.5rem;
+    font-family: 'Lato';
+    border-collapse:collapse;
+-webkit-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.66); 
+box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
+
+  }
+  .error-message{
+    color: RED;
   }
