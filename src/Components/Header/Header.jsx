@@ -4,7 +4,8 @@ import "./Header.scss";
 function Header({ title }) {
   return (
     <>
-      <div className="title">{title}</div>
+     <div className="title">{title}</div>
+  
      
     </>
   );

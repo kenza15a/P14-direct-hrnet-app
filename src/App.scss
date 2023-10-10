@@ -1,11 +1,10 @@
 @import "./styles/main";
 .App {
     text-align: center;
-  
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100vh;
-  
+    height: 100vh;
   }
   
   body {
@@ -13,28 +12,41 @@
     padding: 0;
   }
   
-  .app-container {
+  /*.app-container {
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas:"sideBar  Main";
-    height: 90VH;
-    margin-top: 0%;
-  padding-top: 0%;
+    height: 100VH;
+    min-height: fit-content;
+    padding: 0;
+  }*/
+  .app-container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-image: url('');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center center; 
+ 
+    
   }
   
   .font-face-gm {
     font-family: "brico";
   }
   
-  .main-container {
-    height:90%;
+  .main-container { //contains page elements without sideNav
+    height:100vh;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
     padding-top: 4rem;
-  
+    width: 95%;
+    padding: 2rem auto;
+    
   }
 
    /* Styles pour les petits écrans */
@@ -42,16 +54,16 @@
     .app-container {
         display: flex;
         flex-direction:column-reverse;
-        
+        height: 100vh;
+        gap: 0;
+
     }
     .main-container {
-        height:90%;
+        height:95%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 3rem;
-        padding-top: 4rem;
-      
+        gap: 1rem;
+        
       }
-    
-      
   }

@@ -5,14 +5,13 @@ import Header from "../../Components/Header/Header";
 import { useFormData } from "../../context/EmployeeDataProvider";
 import AllEmployeesTable from "../../Components/Table/AllEmployeesTable";
 import { useState } from "react";
-import EmployeesForm from "../../Components/Form/EmployeesForm";
 import EmployeesModal from "../../Components/Modal/EmployeesModal";
-import AllEmployeesPagedTable from "../../Components/Table/AllEmployeesPagedTable";
+import EmployeesStepsForm from "../../Components/Form/EmployeesStepsForm";
+import Message from "../../Components/Message/Message";
 function AllEmployeesPage() {
   const { formDataArray } = useFormData();
   console.log("formDataArray in employeesPage:", formDataArray);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -28,13 +27,27 @@ function AllEmployeesPage() {
         <div className="main-container">
           <Header title="All employees" />
           <div className="tableControls">
-          <div className="pagination"></div>
-          <button className="addEmployees" onClick={openModal}>Add new employee</button>
+            <div className="pagination"></div>
+            <button className="addEmployees" onClick={openModal}>
+              Add new employee
+            </button>
           </div>
-          <AllEmployeesTable data={formDataArray} />
+          {formDataArray.length > 0 ? (
+            <AllEmployeesTable data={formDataArray} />
+          ) : (
+            <div className="error-no-data">
+              {" "}
+              <Message messageText={"Sorry no data available !"} />
+              <p>Click add new employee to start  😃...</p>
+            </div>
+          )}
           {isModalOpen && (
-            <EmployeesModal isOpen={isModalOpen} contentComponent={<EmployeesForm/>} closeFunction={closeModal}/>
-      )}
+            <EmployeesModal
+              isOpen={isModalOpen}
+              contentComponent={<EmployeesStepsForm />}
+              closeFunction={closeModal}
+            />
+          )}
         </div>
       </div>
     </>

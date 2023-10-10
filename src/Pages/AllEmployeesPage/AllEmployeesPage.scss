@@ -6,4 +6,18 @@ h4 {
     @include button($primary-color);
     width:fit-content;
     padding: 1rem;
+    @include shadow;
+}
+.error-no-data{
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Lato';
+    margin: 4rem auto;
+    width: 80%;border-radius: 1rem;
+  // @include shadow; //mixin shadow 
+    & p{
+        font-size: 2rem;
+        color: $primary-color;
+    }
+
 }

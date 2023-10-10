@@ -11,4 +11,6 @@
 
 .message {
     place-self: center;
+    font-size: 2rem;
+    font-family: 'Lato';
 }

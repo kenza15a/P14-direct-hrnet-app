@@ -1,68 +1,153 @@
 @import '../../styles/main';
-.employees-table {
-    table-layout: fixed;
-    width: 90%;
-    margin: 1rem auto;
-border-collapse:collapse;
--webkit-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.66); 
-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
 
- & thead{
-    color:$primary-color;
-    cursor: pointer;
-    background-color: $primary-color;
-    color: white;
- 
-   & .table-filter { //input in table
-        border: none;
-        background-color: transparent;
+.employees-table-container{
+
+  display: flex;
+  flex-direction: row;
+  padding: 5rem;
+  width: 100%;
+  padding: 2rem auto;
+  .employees-table {
+    table-layout:unset; //put this to fixed for fixed table width
+    width: 86%;
+    border-collapse:collapse;
+    -webkit-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.66); 
+    box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
+    overflow-x: scroll; /* Add horizontal scroll */
+     & thead{
+        cursor: pointer;
+        background-color: $primary-color;
         color: white;
+        & tr {
+          padding: 2rem;
+          &:hover{
+            background-color: $third-color;
+            color:white;
+         }
       
-        &::placeholder {
-          color: white;
-          font-size: 1rem;
-        }
-      }
-   
+        & .employee-cell{
+           // border: solid 1px $third-color;
+           border: solid 0,5rem white;
+            text-align: left;
+            font-size: 1em;
+            padding:10px;
+           
+         }
+            
+         }
+        & th{    
+          & .table-header {
+            position:relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0.5rem;
+            padding: 1rem;
+           font-size: 0.8rem;
+           
+            & .table-filter { //input in table
+              border: none;
+              background-color: transparent;
+              color: white;
+               padding: 0;
+             
+              &::placeholder {
+                color:rgba(255, 255, 255, 0.728);
+                font-size: 0,6rem;
+              }
+           }
 
+            & .search-icon{
+           font-size: 1rem;
+          
+            }
+            & .sort{
+              font-size: 1,5rem;
+             
+                  }
+          }
+       
+       
+      }
  }
- & .employee-cell{
-   // border: solid 1px $third-color;
-   border: solid O,5rem white;
-    text-align: left;
-    font-size: 0.9rem;
-    padding: 1rem;
-   
- }
+
+
  & tr {
+  padding: 2rem;
     &:hover{
         background-color: $secondary-color;
         color: white;
      }
+      & .employee-cell{
+   // border: solid 1px $third-color;
+   border: solid 0,5rem white;
+    text-align: left;
+    font-size: 1em;
+    padding:10px;
+   
+ }
+    
  }
 
 }
-th {
-    & span{
-        margin-right: 0.6rem;
-    }
-   
-    
-}
-.table-header {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-  }
-  
 
- 
+}
+
   .hidden{
     display: none;
   }
-//pagination
-.pagination-select{
-width: fit-content;
-background-color: white;
-margin-left: 1rem;
+
+
+/*@media (max-width: $small-screen) {
+  .employees-table {
+    table-layout:auto;
+    width: 70%;
+    margin: 0.5rem auto;
+    border-collapse:collapse;
+    -webkit-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.66); 
+    box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
+    overflow-x: auto; /* Add horizontal scroll */
+/*
+    & thead{
+        
+      cursor: pointer;
+      background-color: $primary-color;
+      color: white;
+      padding: 0;
+      & th{    
+        font-size: ²em;
+         & .table-filter { //input in table
+        border: none;
+        background-color: transparent;
+        color: white;
+        padding: 0%;
+     
+        &::placeholder {
+          color:rgba(255, 255, 255, 0.728);
+          font-size: 0,4rem;
+        }
+     }}
+
+ 
+ 
+
 }
+
+
+& .employee-cell{
+ // border: solid 1px $third-color;
+ border: solid 0,5rem white;
+  text-align: left;
+  font-size: 1em;
+  padding: 0.6rem;
+}
+& tr {
+padding: 2rem;
+  &:hover{
+      background-color: $secondary-color;
+      color: white;
+   }
+}
+
+}
+}*/
