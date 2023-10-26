@@ -8,11 +8,36 @@ import * as yup from "yup";
 import { useFormData } from "../../context/EmployeeDataProvider";
 import EmployeesModal from "../Modal/EmployeesModal";
 import Message from "../Message/Message";
-import { useNavigate } from "react-router-dom";
+import { Await, useNavigate } from "react-router-dom";
+import MessageModal from "../MessageModal/MessageModal";
+import PopUPComponent from "../PopupComponent/PopUPComponent";
+
+
+/*
+*
+*
+*
+*
+*
+*
+*
+*/
 const nameRules = /^[A-Za-zÀ-ÿ\s'-]{1,50}$/;
 const streetreg = /\w+(\s\w+){2,}/;
 
-function EmployeesStepsForm() {
+
+
+
+
+
+
+
+
+
+function FormComponent() {
+  
+ 
+
   //data
   const [data, setData] = useState({
     firstName: "",
@@ -39,6 +64,8 @@ function EmployeesStepsForm() {
       departement: "",
     });
     setCurrentStep(0);
+   
+    
   };
   const handleNextStep = (newData) => {
     setData((prev) => ({ ...prev, ...newData }));
@@ -51,11 +78,7 @@ function EmployeesStepsForm() {
   const steps = [
     <StepOne next={handleNextStep} data={data} />,
     <StepTwo next={handleNextStep} prev={handelPrevStep} data={data} />,
-    <StepThree
-      prev={handelPrevStep}
-      data={data}
-      handleResetSteps={handleResetToStepOne}
-    />,
+    <StepThree prev={handelPrevStep} data={data} handleResetSteps={handleResetToStepOne}/>,
   ];
   return <>{steps[currentStep]}</>;
 }
@@ -97,7 +120,7 @@ const StepOne = (props) => {
       {() => (
         <Form>
           <div className="fields-groupe">
-            <h2> EMPLOYEE'S INFORMATION </h2>
+            <h2> EMPLOYEE'S INFORMATION  </h2>
 
             <CostumField
               label="First Name"
@@ -160,9 +183,9 @@ const StepTwo = (props) => {
       .positive()
       .integer()
       .min(1)
-      .max(999999)
+    .max(999999)
       .required("required"),
-    state: yup.string().required("required field"),
+      state: yup.string().required("required field"),
   });
   const handleSubmit = (values) => {
     props.next(values);
@@ -205,20 +228,15 @@ const StepTwo = (props) => {
               className="input-field"
               errorName="zipCode"
             />
-            <SelectComponent
-              label="States"
-              name="state"
-              options={states}
-              defaultValue={"Choose a state"}
-            />
+            <SelectComponent label="States" name="state" options={states} defaultValue={"Choose a state"} />
           </div>
           <div className="button-group">
             <button type="button" onClick={handelPrev}>
-              <i class="fa fa-chevron-left"></i>
+              <i className="fa fa-chevron-left"></i>
             </button>
             <button type="submit">
               {" "}
-              <i class="fa fa-chevron-right"></i>
+              <i className="fa fa-chevron-right"></i>
             </button>
           </div>
         </Form>
@@ -227,28 +245,36 @@ const StepTwo = (props) => {
   );
 };
 const StepThree = (props) => {
-  const { emlployeesList, addFormData } = useFormData();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { addFormData } = useFormData();
+  const [isMessageOpen, setIsMessageOpen] = useState(false);
+  const [isPopUpOpen,setIsPopUPOpen]=useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-    console.log("steps form");
-    console.log(isModalOpen);
+  const openMessageModal = () => {
+    setIsMessageOpen(true);
   };
 
-  const closeModal = () => {
-   
-    setIsModalOpen(!isModalOpen);
-    console.log("steps form");
-    console.log(isModalOpen);
+  const closeMessageModal = () => {
+    setIsMessageOpen(false);
   };
-
+  
+  const closePopUp = () => {
+    setIsPopUPOpen(false)
+  };
+  
   const navigate = useNavigate();
-  const handleRedirect = () => {
-    closeModal();
-    navigate("/allEmployees");
+  const handleRedirect =  () => {
+    if (isPopUpOpen===false){
+      console.log("here ormamlly i close")
+      closePopUp()
+      closeMessageModal();
+    }else{  
+      closeMessageModal();
+      navigate("/allEmployees");}
+  
+     
   };
 
+ 
   const formSchema = yup.object().shape({
     departement: yup.string().required("required field"),
   });
@@ -256,13 +282,14 @@ const StepThree = (props) => {
     formSchema
       .validate(values, { abortEarly: false })
       .then(() => {
-        addFormData(values); // Add the form data to the array
-      closeModal();
-        //open success modal
-        openModal();
-        resetForm();
-        // resetSteps();
-        setSubmitting(false);
+      addFormData(values); // Add the form data to the array
+   openMessageModal()
+    // resetSteps();
+      resetForm();
+      if(isMessageOpen===true){ setIsPopUPOpen(false)}
+   
+    //  setIsPopUPOpen(false)
+      setSubmitting(false);
       })
       .catch((errors) => {
         console.log("Validation errors:", errors);
@@ -270,9 +297,9 @@ const StepThree = (props) => {
         setSubmitting(false);
       });
   };
-  const resetSteps = () => {
-    props.handleResetSteps();
-  };
+  const resetSteps=()=>{
+    props.handleResetSteps()
+  }
   const handelPrev = (values) => {
     props.prev(values);
   };
@@ -296,32 +323,48 @@ const StepThree = (props) => {
               />
             </div>
             <div className="button-group">
+              hi
               <button type="button" onClick={handelPrev}>
-                <i class="fa fa-chevron-left"></i>
+                <i className="fa fa-chevron-left"></i>
               </button>
               <button type="submit" className="submit-button">
-                <i> Add the employee </i>
-                <i class="fa fa-user-plus"></i>
+              <i> Add the employee </i> 
+                <i className="fa fa-user-plus"></i>
               </button>
             </div>
           </Form>
         )}
+      
       </Formik>
-      {isModalOpen && (
-        <EmployeesModal
-          isOpen={isModalOpen}
-          contentComponent={
-            <Message messageText={"EMPLOYEE ADDED SUCCESSFULLY!"} />
+      
+      {isMessageOpen  && (
+        <MessageModal
+          isOpen={isMessageOpen}
+          message={
+            "EMPLOYEE  SUCCESSFULLY! 😃"
           }
-          closeFunction={() => {
-            closeModal();
-          }}
-          okButtonState={true}
+          closeFunction={closeMessageModal}
           buttonFunction={handleRedirect}
           buttonText={"See All employees"}
         />
       )}
+        {isPopUpOpen  && (
+        <PopUPComponent
+   
+
+          isOpen={isPopUpOpen}
+          contentComponent={
+           <FormComponent/>
+          }
+          closeFunction={()=>setIsPopUPOpen(false)
+          
+          }
+          
+        />
+      )}
+     
+     
     </>
   );
 };
-export default EmployeesStepsForm;
+export default FormComponent;

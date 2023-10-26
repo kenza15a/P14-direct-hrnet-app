@@ -1,17 +1,21 @@
 @import '../../styles/main';
 .loading-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh; /* Center vertically in viewport */
+    gap: 2rem;
+    height: 100%; /* Center vertically in viewport */
+    padding: auto 4rem;
   }
   
   .loader {
+    
     border: 4px solid #f3f3f3;
     border-top: 1rem solid $primary-color;
     border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
+    width: 10rem;
+    height: 10rem;
     animation: spin 2s linear infinite;
   }
   

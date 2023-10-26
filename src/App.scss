@@ -25,12 +25,13 @@
   .app-container{
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     background-image: url('');
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center center; 
- 
+ //background-color: black;
     
   }
   
@@ -39,11 +40,12 @@
   }
   
   .main-container { //contains page elements without sideNav
-    height:100vh;
+    height:max-content;
+    min-height: max-content;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-top: 4rem;
+    padding-top: 1rem;
     width: 95%;
     padding: 2rem auto;
     
@@ -67,3 +69,6 @@
         
       }
   }
+  .loading{
+    padding-top: 15%;
+}

@@ -1,30 +1,34 @@
 import React from "react";
-import './EmployeesModal.scss'
-function EmployeesModal({isOpen, contentComponent, closeFunction,okButtonState,buttonFunction,buttonText}) {
-  if (!isOpen) return null;
+import "./PopUPComponent.scss";
+function PopUPComponent({
+  isOpen,
+  contentComponent,
+  closeFunction,
+}) {
+  if (!isOpen) {
+    console.log("Popup is not open.");
+    return null;
+  }
 
   return (
     <>
-      <div className="modal-overlay" onClick={closeFunction}>
-       
+      <div className="popup-overlay" onClick={closeFunction}>
         {/*close the modal when i click outside */}
         <div className="modal" onClick={(e) => e.stopPropagation()}>
-         
           {/*to stop the closing event when i click inside the modal */}
           <div className="modal-content">
             <span className="close" onClick={closeFunction}>
               &times;
             </span>
             <div className="modal-main-content">
-            {contentComponent}
-            {okButtonState && (   <button className="modal-confirmation" onClick={buttonFunction}>{buttonText}</button>)}
+              {contentComponent}
+              
             </div>
-         </div>
           </div>
         </div>
-      
+      </div>
     </>
   );
 }
 
-export default EmployeesModal;
+export default PopUPComponent;

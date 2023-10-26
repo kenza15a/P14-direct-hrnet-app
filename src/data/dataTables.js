@@ -1,4 +1,5 @@
 const states = [
+ 
     {
         name: "Alabama",
         abbreviation: "AL",
@@ -243,4 +244,150 @@ const departmentsList = [
     { key: "4", name: "Engineering" },
     { key: "5", name: "Legal" },
 ];
-export  { states, departmentsList };
+
+
+
+const mockedEmployees=[
+
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    { firstName:"Mohamed",
+    lastName:"Raall",
+    birthDate:"16-12-1970",
+    startDate:"15-12-2022",
+    street:"114 RUE cheese cake",
+    city:"newyork",
+    zipCode:5,
+    state:"Virginia",
+    departement:"Marketing" },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    }, {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+    {
+        firstName:"lorant",
+        lastName:"pariss",
+        birthDate:"12-06-1990",
+        startDate:"15-9-2023",
+        street:"114 RUE NATCHO NATCHO",
+        city:"paris",
+        zipCode:75,
+        state:"Wyoming",
+        departement:"Legal" 
+    },
+];
+export  { states, departmentsList,mockedEmployees };

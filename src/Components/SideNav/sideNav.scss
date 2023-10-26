@@ -2,7 +2,10 @@
 
 //side navigation styles 
 .main-nav {@include side-nav(column);
-    width: 4%;}
+    min-height: max-content;
+    width: 4%;
+    max-width:1000px
+}
 
 .menu{
   @include menu;
