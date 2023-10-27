@@ -24,8 +24,13 @@ import MessageModal from "../../Components/MessageModal/MessageModal";
 function EmployeesListPage() {
   const { emlployeesList } = useFormData();
   const [isMessageOpen, setIsMessageOpen] = useState(false);
-  const [isPopUpOpen,setIsPopUPOpen]=useState(false);
   
+  const [isPopUpOpen,setIsPopUPOpen]=useState(false);
+  const onFormSubmitSuccess = () => {
+    // Handle the success behavior here, e.g., close the popup
+    setIsPopUPOpen(false);
+  };
+
  
   const openPopUp = () => {
     setIsPopUPOpen(true);
@@ -78,7 +83,7 @@ function EmployeesListPage() {
             {isPopUpOpen  && (
             <PopUPComponent
             isOpen={isPopUpOpen}
-              contentComponent={<FormComponent />}
+              contentComponent={<FormComponent onFormSubmitSuccess={onFormSubmitSuccess}/>}
               closeFunction={closePopUp}
             />
           )}
