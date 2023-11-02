@@ -14,21 +14,18 @@ h4 {
     font-family: 'Lato';
     margin: 1rem auto;
     width: 80%;border-radius: 1rem;
-  // @include shadow; //mixin shadow 
+  
     & p{
         font-size: 2rem;
         color: $primary-color;
     }
-    
-
 }
 .mocked-container {
-
-
     display: flex;
     flex-direction: column;
     gap:0rem;
     margin: 0;
-} .hidden {
+} 
+.hidden {
     display: none;
   }

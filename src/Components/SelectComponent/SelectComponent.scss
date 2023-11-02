@@ -1,4 +1,4 @@
-
+@import '../../styles/main';
 .input-field{
     @include form-fileds();
   }
@@ -6,8 +6,6 @@
       @include form-fileds();
       top: 100%;
       bottom: auto;
-  
-  
   }
 
   .lab-and-field{
