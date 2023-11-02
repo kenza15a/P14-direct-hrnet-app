@@ -1,6 +1,6 @@
 import React from "react";
 import './EmployeesModal.scss'
-function EmployeesModal({ isOpen, contentComponent, closeFunction,okButtonState,buttonFunction,buttonText}) {
+function EmployeesModal({isOpen, contentComponent, closeFunction,okButtonState,buttonFunction,buttonText}) {
   if (!isOpen) return null;
 
   return (

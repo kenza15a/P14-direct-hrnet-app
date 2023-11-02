@@ -65,7 +65,7 @@ button {
 
 
 .employee-form {
-  max-height: 100vh;
+  max-height: 100%;
   /* Remplacez 300px par la hauteur souhaitée */
   width: 100vw;
   overflow-y: auto;
@@ -132,6 +132,9 @@ width: 66%;
     @extend button;
     margin-left: calc(2%);
    width: 95%;
+   display: flex;
+   gap: 2rem;
+   flex-direction: row;
   }
 
   .button-group button{
@@ -146,4 +149,14 @@ box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
   }
   .error-message{
     color: RED;
+  }
+  .next-button{
+    position: relative;
+    nav-down: 0;
+    left: 95%;
+  }
+
+ 
+  .hidden {
+    display: none;
   }

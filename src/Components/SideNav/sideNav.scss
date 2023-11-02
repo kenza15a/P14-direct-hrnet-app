@@ -2,7 +2,10 @@
 
 //side navigation styles 
 .main-nav {@include side-nav(column);
-    width: 4%;}
+    min-height: max-content;
+    width: 4%;
+    max-width:1000px;
+}
 
 .menu{
   @include menu;
@@ -16,7 +19,7 @@
     font-size: 1rem;
     height: 100%;
 }
-    /* Styles pour les petits écrans */
+   // Styles pour les petits écrans 
     @media (max-width: $small-screen) {
         .main-nav {@include side-nav-mobile;
             height: 5%;

@@ -6,11 +6,11 @@
     padding: 10% 0;
     justify-content: space-between;
     font-family: "GoldmanBold";
+    & .message {
+        place-self: center;
+        font-size: 2rem;
+        font-family: 'Lato';
+    }
 
 }
 
-.message {
-    place-self: center;
-    font-size: 2rem;
-    font-family: 'Lato';
-}
