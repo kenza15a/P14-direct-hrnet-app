@@ -60,7 +60,7 @@ const [sorting, setSorting] = useState({
         setFilterValues(newFilterValues);
     //update the data to filtered data 
         const filtered = data.filter((entry) => {
-          return tableKeys.every((tKey) => {//returns a boolean if any of the table elemnts contain the entered value
+          return tableKeys.every((tKey) => {//returns a boolean if any of the table elements contain the entered value
             const filterValue = newFilterValues[tKey];
             if (!filterValue) return true; // No filter applied
             return String(entry[tKey]).toLowerCase().includes(filterValue.toLowerCase());

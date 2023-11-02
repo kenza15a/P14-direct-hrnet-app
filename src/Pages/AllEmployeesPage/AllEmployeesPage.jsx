@@ -8,7 +8,7 @@ import EmployeesModal from "../../Components/Modal/EmployeesModal";
 import EmployeesStepsForm from "../../Components/Form/EmployeesStepsForm";
 import { mockedEmployees } from "../../data/dataTables";
 import AllEmployeesTablePaged from "../../Components/Table/AllEmployeesPagedTable";
-import Message from "../../Components/Message/Message";
+
 /*
 *
 *
@@ -50,13 +50,14 @@ function AllEmployeesPage() {
           {/*<div className="error-no-data">
               <Message messageText={"Sorry no data available !"} subMessageText={"Click add new employee to start  😃..."} />
           </div> */}  
+         
             <AllEmployeesTablePaged data={mockedEmployees}/>
           </div>
           )}
             {isModalOpen && (
             <EmployeesModal
               isOpen={isModalOpen}
-              contentComponent={<EmployeesStepsForm />}
+              contentComponent={<EmployeesStepsForm closeParentFunction={closeModal} />}
               closeFunction={closeModal}
             />
           )}
