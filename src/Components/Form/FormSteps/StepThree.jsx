@@ -33,7 +33,7 @@ const StepThree = (props) => {
         //open success modal
         props.openModal();
         resetForm();
-        // resetSteps();
+         resetSteps();
         setSubmitting(false);
       })
       .catch((errors) => {
