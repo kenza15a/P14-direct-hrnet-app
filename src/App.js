@@ -1,6 +1,6 @@
 
 import './App.scss';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter, Router } from 'react-router-dom';
 import FormPage from './Pages/FormPage/FormPage';
 import AllEmployeesPage from './Pages/AllEmployeesPage/AllEmployeesPage';
 import NotAvailable from './Pages/NotAvailable/NotAvailable';
@@ -24,10 +24,12 @@ function App() {
       setIsLoading(false);
     }, 1000);
   }, []);
-  return (
-    <>
 
-      <BrowserRouter>
+
+  return (
+    <> 
+  
+    <BrowserRouter>
         <FormDataProvider>
 
 
@@ -45,6 +47,8 @@ function App() {
             </Routes>)}
         </FormDataProvider>
       </BrowserRouter>
+    
+      
     </>
 
 

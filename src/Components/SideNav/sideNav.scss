@@ -4,7 +4,7 @@
 .main-nav {@include side-nav(column);
     min-height: max-content;
     width: 4%;
-    max-width:1000px;
+   // max-width:1000px;
 }
 
 .menu{
@@ -20,9 +20,11 @@
     height: 100%;
 }
    // Styles pour les petits écrans 
-    @media (max-width: $small-screen) {
+    @media (max-width: $small-screen ) {
         .main-nav {@include side-nav-mobile;
-            height: 5%;
+            height: 3rem;
+            width: 100%;
+            
            }
         .copy-write {
             writing-mode: vertical-lr;

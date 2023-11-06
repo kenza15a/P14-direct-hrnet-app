@@ -13,6 +13,21 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  & button{
+    -webkit-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.66); 
+    box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
+  }
+  & .page-navigation{
+   display:flex;
+   flex-direction: row;
+   gap: 1rem;
+   & button{
+    background-color: rgb(255, 255, 255);
+    color: $primary-color;
+    -webkit-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.66); 
+    box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
+   }
+  }
   }
   & .employees-table {
     table-layout:auto; //put this to fixed for fixed table width

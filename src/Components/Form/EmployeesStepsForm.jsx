@@ -5,6 +5,7 @@ import StepThree from "./FormSteps/StepThree";
 import { useNavigate } from "react-router-dom";
 import EmployeesModal from "../Modal/EmployeesModal";
 import Message from "../Message/Message";
+import ModalComponent from "react-dynamic-modal-lib";
 /*
 *
 *
@@ -45,8 +46,7 @@ function EmployeesStepsForm({ closeParentFunction }) {
 
   const closeModal = () => {
     setIsModalOpen(!isModalOpen);
-   closeParentFunction();
-   
+    closeParentFunction();
   };
 
   const navigate = useNavigate();
@@ -91,11 +91,13 @@ function EmployeesStepsForm({ closeParentFunction }) {
       {steps[currentStep]}
 
       {isModalOpen && (
-        <EmployeesModal
+        <ModalComponent
           isOpen={isModalOpen}
           contentComponent={
-            <span className="modal-Message"> <Message messageText={"EMPLOYEE ADDED SUCCESSFULLY 😀 ! "} /></span>
-           
+            <span className="modal-Message">
+              {" "}
+              <Message messageText={"EMPLOYEE ADDED SUCCESSFULLY  😀 ! "} />
+            </span>
           }
           closeFunction={() => {
             closeModal();

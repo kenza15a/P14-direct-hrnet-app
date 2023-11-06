@@ -6,10 +6,8 @@ import EmployeesStepsForm from "../../Components/Form/EmployeesStepsForm";
 import { useState } from "react";
 
 function FormPage() {
-  
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -23,9 +21,8 @@ function FormPage() {
         <SideNav />
         <div className="main-container">
           <Header title="Let's add an employee" />
-          <EmployeesStepsForm closeParentFunction={closeModal}/>
+          <EmployeesStepsForm closeParentFunction={closeModal} />
         </div>
-     
       </div>
     </>
   );
