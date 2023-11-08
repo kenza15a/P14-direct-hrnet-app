@@ -60,7 +60,7 @@ function AllEmployeesPage() {
               closeFunction={closeModal}
             />
             )*/
-          
+          isModalOpen&&(
             <ModalComponent
               isOpen={isModalOpen}
               contentComponent={
@@ -68,6 +68,7 @@ function AllEmployeesPage() {
               }
               closeFunction={closeModal}
             />
+          )
           }
         </div>
       </div>
