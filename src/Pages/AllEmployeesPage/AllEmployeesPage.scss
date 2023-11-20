@@ -12,7 +12,6 @@
     font-family: 'Lato';
     margin: 1rem auto;
     width: 80%;
-    //border-radius: 1rem;
   
     & p{
         font-size: 2rem;
@@ -45,13 +44,12 @@
     justify-content: start;
     align-items: center;
     width: 90%;
-    margin: 1rem 5rem ;
-    //background-color: red;
+    margin: 0rem 3rem ;
+  
 }
 .table-content{
     display:flex;
     flex-direction: column;
-   // height: 70vh;
-  //  background-color:red;
+
 }
 }
