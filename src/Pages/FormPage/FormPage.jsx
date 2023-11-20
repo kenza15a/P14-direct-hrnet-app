@@ -22,7 +22,7 @@ function FormPage() {
       <div className="app-container">
         <SideNav />
         <div className="main-container">
-          <Header title="Let's add an employee" />
+          <Header title="ADD AN EMPLOYEE" />
           <EmployeesStepsForm closeParentFunction={closeModal}/>
         </div>
      

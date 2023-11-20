@@ -17,7 +17,7 @@ export const useFormData = () => {
 };
 
 export const FormDataProvider = ({ children }) => {
-  const [emlployeesList, setemlployeesList] = useState([]);
+  const [employeesList, setEmployeesList] = useState([]);
 
   const addFormData = (formData) => {
 
@@ -32,13 +32,13 @@ export const FormDataProvider = ({ children }) => {
       formData.state,
       formData.departement
     );
-    setemlployeesList((prevData) => [...prevData, employee]);
+    setEmployeesList((prevData) => [...prevData, employee]);
 
   };
 
 
   return (
-    <FormDataContext.Provider value={{ emlployeesList, addFormData }}>
+    <FormDataContext.Provider value={{ employeesList, addFormData }}>
       {children}
     </FormDataContext.Provider>
   );

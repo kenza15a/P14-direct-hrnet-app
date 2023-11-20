@@ -51,13 +51,8 @@ button {
     @include button($third-color)
     }
 
-.tableControls{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 80vw;
-}
-
+ 
+    
 
 .date-field {
   width: 80%;
@@ -66,15 +61,14 @@ button {
 
 .employee-form {
   max-height: 100%;
-  /* Remplacez 300px par la hauteur souhaitée */
-  width: 100vw;
+  width: 90%;
   overflow-y: auto;
-  /* Ajoute une barre de défilement verticale si nécessaire */
+ 
 }
 
 //advancedForm
 Form{
-    width: 95%;
+  width: 90%;
    max-width: 400px;
    margin: 0 auto;
    display: flex;
