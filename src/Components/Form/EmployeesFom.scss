@@ -69,7 +69,7 @@ Form{
   }
   .next-button{
     position: relative;
-    nav-down: 0;
+    //nav-down: 0;
     left: 95%;
   }
 
@@ -77,5 +77,38 @@ Form{
     display: none;
   }
 
+  @media (max-width: $small-screen) {
+    .next-button{
+      position: fixed;
 
-  //mobile version
+      left: 70%;
+      height: 3rem;
+      width: fit-content;
+    
+      & i{
+        font-size: 0.8rem;
+      }
+    }
+    Form{
+      width: 90%;
+       max-width: 400px;
+       margin: 0 auto;
+       display: flex;
+       flex-direction: column;
+       gap: 0rem;
+      
+    }
+    .fields-groupe{
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      text-align: left;
+      h2{
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: 'Lato'
+      }
+    }
+    
+  }
+  
