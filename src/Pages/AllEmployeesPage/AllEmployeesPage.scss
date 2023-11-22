@@ -1,4 +1,8 @@
 @import '../../styles/main';
+button {
+    @include button($third-color)
+    }
+
 
 .addEmployees{
     @include button($primary-color);

@@ -10,9 +10,8 @@
 button {
     &.modal-confirmation{
     @include button($primary-color) ;
-   //background-color: $primary-color;
     padding:1rem;
-    font-size: 1,5rem;
+    font-size: 1.5rem;
     font-family: 'Lato';
     border-collapse:collapse;
     width: fit-content;

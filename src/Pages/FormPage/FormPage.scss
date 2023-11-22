@@ -1,2 +1,24 @@
 @import '../../styles/main';
 
+.form-container{
+    margin-top: 3rem;
+}
+.header-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+   
+}
+@media (max-width:$small-screen) {
+    .header-container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1%;
+       
+    }
+
+    .form-container{
+        margin-top: 1rem;
+    }
+    
+}
