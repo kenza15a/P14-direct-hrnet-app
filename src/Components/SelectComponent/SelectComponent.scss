@@ -2,7 +2,7 @@
 .input-field{
     @include form-fileds();
   }
-  .select_field{
+  .select-field{
       @include form-fileds();
       top: 100%;
       bottom: auto;
@@ -33,4 +33,17 @@ width: 66%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+  }
+  @media (max-width: $small-screen) {
+
+    .select-field{
+      @include form-fileds();
+      top: 100%;
+     
+      & select{ //select 
+        width: 100%;
+      }
+    }
+
+
   }

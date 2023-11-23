@@ -59,7 +59,7 @@ function AllEmployeesPage() {
          )}
 
          </div>
-          
+       
           {isModalOpen && (
             <ModalComponent
               isOpen={isModalOpen}

@@ -26,3 +26,25 @@
     }
 
   }
+  //mobile display
+  @media (max-width:$small-screen) {
+
+    .lab-and-field{
+       
+        display: flex;
+        width: 100%;
+        gap: 0;
+        & label{
+           display: none;
+        } & Field{
+            width: 66%;
+        }
+        & .error{
+            color: $error-color;
+            font-size: 1rem;
+            text-align: left;
+            margin-top: 0.25rem;
+            margin-left: -1;
+        }
+    }
+  }

@@ -7,7 +7,7 @@ function SelectComponent(props) {
     <>
       <div className="lab-and-field">
         <label htmlFor={name}>{label}</label>
-        <Field className="select_field" as="select" id={name} name={name} {...rest}>
+        <Field className="select-field" as="select" id={name} name={name} {...rest}>
         <option value={defaultValue} >{defaultValue}</option>
           {options.map((option) => {
             return (
