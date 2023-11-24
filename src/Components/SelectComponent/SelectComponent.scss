@@ -1,12 +1,6 @@
 @import '../../styles/main';
-.input-field{
-    @include form-fileds();
-  }
-  .select-field{
-      @include form-fileds();
-      top: 100%;
-      bottom: auto;
-  }
+
+ 
 
   .lab-and-field{
     display: flex;
@@ -19,7 +13,12 @@
         margin: 1rem 0 0.2rem;
         width: 30%;
     } & Field{
-width: 66%;
+        width: 76%;
+      /*  & .select-field{
+          @include form-fileds();
+          top: 100%;
+          bottom: auto;
+      }*/
     }
     & .error{
         color: $error-color;
@@ -28,11 +27,6 @@ width: 66%;
         margin-top: 0.25rem;
     }
 
-  }
-  .fields-groupe{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
   }
   @media (max-width: $small-screen) {
 

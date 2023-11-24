@@ -7,6 +7,7 @@ import NotAvailable from './Pages/NotAvailable/NotAvailable';
 import { FormDataProvider } from './context/EmployeeDataProvider';
 import { useEffect, useState } from 'react';
 import Loading from './Components/Loading/Loading'
+import { Helmet } from 'react-helmet';
 
 
 
@@ -26,7 +27,10 @@ function App() {
   }, []);
   return (
     <>
-
+      <Helmet>
+        <title>HR NET</title>
+        {/* You can also include other meta tags or link tags for styles here */}
+      </Helmet>
       <BrowserRouter>
         <FormDataProvider>
 

@@ -50,6 +50,7 @@ const StepOne = (props) => {
       >
         {() => (
           <Form>
+           
             <div className="fields-groupe">
               <h2> EMPLOYEE'S INFORMATION  </h2>
               <CostumField
@@ -91,6 +92,7 @@ const StepOne = (props) => {
                 <i className="fa fa-chevron-right"></i>
               </button>
             </div>
+           
           </Form>
         )}
       </Formik>
