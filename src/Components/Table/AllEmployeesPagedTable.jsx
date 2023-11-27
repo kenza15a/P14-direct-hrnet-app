@@ -136,7 +136,7 @@ const [sorting, setSorting] = useState({
   return (
     <>
       <div className="employees-table-container">
-        <div className="pagination">
+      <div className="pagination">
           <div className="items-per-page">
             {" "}
             <span>Items per page:</span>
@@ -151,34 +151,42 @@ const [sorting, setSorting] = useState({
               ))}
             </select>
           </div>
-
-          <span>
+          <div className="pagination-pages">   
+          <span >
             Page {currentPage} of {totalPages}
           </span>
-          <button
+          </div>
+        
+          
+   
+      
+          <div className="page-navigation">
+           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-          >
-            Previous
+           >
+            <i className="fa fa-chevron-left"></i>
           </button>
-          <div className="page-navigation">
             {generatePageNumbers().map((pageNumber) => (
               <button
                 key={pageNumber}
                 onClick={() => handlePageChange(pageNumber)}
                 className={pageNumber === currentPage ? "active" : ""}
               >
-                {pageNumber}
+               
+                {pageNumber} 
               </button>
             ))}
-          </div>
-         
-          <button
+             <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
-            Next
+         
+          <i className="fa fa-chevron-right"></i>
           </button>
+          </div>
+          
+         
         </div>
         <table className="employees-table">
           <thead>
@@ -246,33 +254,42 @@ const [sorting, setSorting] = useState({
               ))}
             </select>
           </div>
-
-          <span>
+          <div className="pagination-pages">   
+          <span >
             Page {currentPage} of {totalPages}
-          </span><button
+          </span>
+          </div>
+        
+          
+   
+      
+          <div className="page-navigation">
+           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-          >
-            Previous
+           >
+            <i className="fa fa-chevron-left"></i>
           </button>
-          <div className="page-navigation">
             {generatePageNumbers().map((pageNumber) => (
               <button
                 key={pageNumber}
                 onClick={() => handlePageChange(pageNumber)}
                 className={pageNumber === currentPage ? "active" : ""}
               >
-                {pageNumber}
+               
+                {pageNumber} 
               </button>
             ))}
-          </div>
-          
-          <button
+             <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
-            Next
+         
+          <i className="fa fa-chevron-right"></i>
           </button>
+          </div>
+          
+         
         </div>
       </div>
     </>
