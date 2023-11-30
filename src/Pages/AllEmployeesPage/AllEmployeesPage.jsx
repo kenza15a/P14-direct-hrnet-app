@@ -9,7 +9,6 @@ import { mockedEmployees } from "../../data/dataTables";
 import AllEmployeesTablePaged from "../../Components/Table/AllEmployeesPagedTable";
 import  ModalComponent  from "dynamic-modal-library";
 import 'dynamic-modal-library/dist/index.css'
-import '../../Components/ModalComponent/ModalComponent.scss'  //for mobile styles
 
 /*
 *

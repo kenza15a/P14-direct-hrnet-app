@@ -86,7 +86,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:start;
+    justify-content:flex-start;
     gap: 0.5rem;
     & a .icon {
         width: 70%;

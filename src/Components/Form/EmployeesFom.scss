@@ -68,6 +68,9 @@ Form{
   .hidden {
     display: none;
   }
+  & .label-mobile{
+    display: none;
+  }
 
 }
  
@@ -82,13 +85,11 @@ Form{
        margin: 0 0.3rem;
        display: flex;
        flex-direction: column;
-       gap: 0rem;
-
        .fields-groupe{
         display: flex;
         flex-direction: column;
         align-items: baseline;
-        gap: 1rem;
+        gap: 0.5rem;
 
         & h2{
           font-size: 2rem;
@@ -154,8 +155,21 @@ Form{
           }
         }
       }
+     
     }
-
+    & .label-mobile{
+      display:block;
+     
+     & p{
+      margin: 0rem 1rem;
+      font-size: 0.7rem;
+      color: green;
+     font-weight: bold;
+     font-family: "lato";
+     }
+ 
+  
+    }
     }
 
    
