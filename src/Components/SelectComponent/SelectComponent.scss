@@ -1,16 +1,12 @@
 @import '../../styles/main';
-.input-field{
-    @include form-fileds();
-  }
-  .select_field{
-      @include form-fileds();
-      top: 100%;
-      bottom: auto;
-  }
 
-  .lab-and-field{
+ 
+
+  .select-lab-and-field{
     display: flex;
+    flex-direction: row;
     gap: 2rem;
+    width: 100%;
     & label{
         font-size: 1rem;
         font-weight: bold;
@@ -18,8 +14,8 @@
         text-align: left;
         margin: 1rem 0 0.2rem;
         width: 30%;
-    } & Field{
-width: 66%;
+    } & select{
+        width: 74%;  
     }
     & .error{
         color: $error-color;
@@ -29,8 +25,36 @@ width: 66%;
     }
 
   }
-  .fields-groupe{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  @media (max-width: $small-screen) {
+
+    .select-lab-and-field{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      & label{
+        
+        display: none;
+       
+    } & select{
+        width: 96%;
+        &.select-field{
+          @include form-fileds();
+          top: 100%;
+          width: 100%;
+         
+          
+        }
+    
+    }
+    & .error{
+        color: $error-color;
+        font-size: 0.75rem;
+        text-align: center;
+        margin: auto;
+    }
+    }
+
+    
+
   }

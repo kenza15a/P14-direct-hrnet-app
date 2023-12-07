@@ -1,7 +1,9 @@
 @import '../../styles/main';
-h4 {
-    color: brown;
-}
+button {
+    @include button($third-color)
+    }
+
+
 .addEmployees{
     @include button($primary-color);
     width:fit-content;
@@ -13,7 +15,7 @@ h4 {
     text-align: center;
     font-family: 'Lato';
     margin: 1rem auto;
-    width: 80%;border-radius: 1rem;
+    width: 80%;
   
     & p{
         font-size: 2rem;
@@ -26,6 +28,34 @@ h4 {
     gap:0rem;
     margin: 0;
 } 
-.hidden {
-    display: none;
-  }
+.tableControls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   justify-content: flex-end;
+    width: 80vw; 
+}
+.table-content{
+    display:flex;
+    flex-direction: column;
+}
+
+@media (max-width: $small-screen) {
+
+.tableControls{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    margin: 0rem 3rem ;
+  
+}
+.table-content{
+    display:flex;
+    flex-direction: column;
+
+}
+}
+
+

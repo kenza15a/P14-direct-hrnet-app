@@ -7,6 +7,7 @@ import NotAvailable from './Pages/NotAvailable/NotAvailable';
 import { FormDataProvider } from './context/EmployeeDataProvider';
 import { useEffect, useState } from 'react';
 import Loading from './Components/Loading/Loading'
+import { Helmet } from 'react-helmet';
 
 
 
@@ -22,11 +23,14 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 400);
   }, []);
   return (
     <>
-
+      <Helmet>
+        <title>HR NET</title>
+     
+      </Helmet>
       <BrowserRouter>
         <FormDataProvider>
 

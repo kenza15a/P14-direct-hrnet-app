@@ -32,7 +32,7 @@ const StepOne = (props) => {
         .required("lastname is required"),
       birthDate: yup
         .date()
-        .required("required")
+        .required("Birth date required")
         .max(
           new Date(Date.now() - 567648000000),
           "You must be at least 18 years"
@@ -40,7 +40,7 @@ const StepOne = (props) => {
       startDate: yup
         .date()
         .max(new Date(), "the date must be prior today ")
-        .required("Required"),
+        .required("Start Date required"),
     });
     return (
       <Formik
@@ -50,6 +50,7 @@ const StepOne = (props) => {
       >
         {() => (
           <Form>
+           
             <div className="fields-groupe">
               <h2> EMPLOYEE'S INFORMATION  </h2>
               <CostumField
@@ -68,6 +69,7 @@ const StepOne = (props) => {
                 className="input-field"
                 errorName="lastName"
               />
+               <div className="label-mobile"><p>Birth date </p></div>
               <CostumField
                 label="Birth Date"
                 name="birthDate"
@@ -76,6 +78,7 @@ const StepOne = (props) => {
                 className="input-field"
                 errorName="birthDate"
               />
+              <div className="label-mobile"><p>Start date</p> </div>
               <CostumField
                 label="Start date"
                 name="startDate"
@@ -91,6 +94,7 @@ const StepOne = (props) => {
                 <i className="fa fa-chevron-right"></i>
               </button>
             </div>
+           
           </Form>
         )}
       </Formik>

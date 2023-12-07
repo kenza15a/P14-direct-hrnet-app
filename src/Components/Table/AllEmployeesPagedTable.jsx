@@ -96,105 +96,203 @@ const [sorting, setSorting] = useState({
       };
     
 
-      //CHange the icon by sorting order 
-      const getSortIcon = (key) => {
-        if (sorting.key === key) {
-          if (sorting.order === "asc") {
-            return <i class="fa fa-sort-up sort"></i>;
-          } else {
-            return <i class="fa fa-sort-down sort"></i>;
-          }
-        }
-        return null;
-      };
-  
-return (
-  <>
-  <div className="employees-table-container">
-  <div className="pagination">
-    <div className="items-per-page"> <span>Items per page:</span>
-  <select onChange={(e) => handleItemsPerPageChange(Number(e.target.value))} value={itemsPerPage}>
-    {itemsPerPageOptions.map((option) => (
-      <option key={option} value={option}>
-        {option}
-      </option>
-    ))}
-  </select></div>
- 
+  //CHange the icon by sorting order
+  const getSortIcon = (key) => {
+    if (sorting.key === key) {
+      if (sorting.order === "asc") {
+        return <i className="fa fa-sort-up sort"></i>;
+      } else {
+        return <i className="fa fa-sort-down sort"></i>;
+      }
+    }
+    return null;
+  };
+  /*const generatePageNumbers = () => {
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+    return pageNumbers;
+  };*/
+  const generatePageNumbers = () => {
+    const pageNumbers = [];
+    
+    // Display the first page button
+    if (currentPage > 1) {
+      pageNumbers.push(1);
+    }
+    
+    // Display the current page button
+    pageNumbers.push(currentPage);
+    
+    // Display the last page button
+    if (currentPage < totalPages) {
+      pageNumbers.push(totalPages);
+    }
+    
+    return pageNumbers;
+  };
 
-  <span>Page {currentPage} of {totalPages}</span>
-  <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-    Previous
-  </button>
-  <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-    Next
-  </button>
-</div>
-      <table className="employees-table">
-        <thead>
-          <tr>
-            {tableKeys.map((tableKey) => (
-              <th className="employee-cell" key={tableKey}  onClick={() => handleSort(tableKey)}>
-                   
-                 <div className="table-header">
-               
-                {/** <i className="fa fa-search search-icon "> </i>*/} 
-                <i className="fa fa-search search-icon"   onClick={() => toggleActiveSearch(tableKey)}></i>
-               
-                {
-                   //if the search on the actual tkey is active
-                columnSearchActive[tableKey] ?
-                ( <input
-                        className="table-filter"
-                        type="text"
-                        placeholder={`Search by ${tableKey}`}
-                        value={filterValues[tableKey] || ""}
-                        onChange={(e) => handleFilterChange(tableKey, e.target.value)}
-                   />)
-                   :(tableKey.toUpperCase())}{getSortIcon(tableKey)}
-                
-                 </div>
-                {/*tableKey.toUpperCase()*/}
-            
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
+  return (
+    <>
+      <div className="employees-table-container">
+      <div className="pagination">
+          <div className="items-per-page">
+            {" "}
+            <span>Items per page:</span>
+            <select
+              onChange={(e) => handleItemsPerPageChange(Number(e.target.value))}
+              value={itemsPerPage}
+            >
+              {itemsPerPageOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="pagination-pages">   
+          <span >
+            Page {currentPage} of {totalPages}
+          </span>
+          </div>
         
-          {visibleData.map((entry, index) => (
-            <tr key={index}>
-              {tableKeys.map((tKey) => (
-                <td key={tKey} className="employee-cell">
-                  {entry[tKey]}
-                </td>
+          
+   
+      
+          <div className="page-navigation">
+           <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+           >
+            <i className="fa fa-chevron-left"></i>
+          </button>
+            {generatePageNumbers().map((pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => handlePageChange(pageNumber)}
+                className={pageNumber === currentPage ? "active" : ""}
+              >
+               
+                {pageNumber} 
+              </button>
+            ))}
+             <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+         
+          <i className="fa fa-chevron-right"></i>
+          </button>
+          </div>
+          
+         
+        </div>
+        <table className="employees-table">
+          <thead>
+            <tr>
+              {tableKeys.map((tableKey) => (
+                <th
+                  className="employee-cell"
+                  key={tableKey}
+                  onClick={() => handleSort(tableKey)}
+                >
+                  <div className="table-header">
+                    {/** <i className="fa fa-search search-icon "> </i>*/}
+                    <i
+                      className="fa fa-search search-icon"
+                      onClick={() => toggleActiveSearch(tableKey)}
+                    ></i>
+
+                    {
+                      //if the search on the actual tkey is active
+                      columnSearchActive[tableKey] ? (
+                        <input
+                          className="table-filter"
+                          type="text"
+                          placeholder={`Search by ${tableKey}`}
+                          value={filterValues[tableKey] || ""}
+                          onChange={(e) =>
+                            handleFilterChange(tableKey, e.target.value)
+                          }
+                        />
+                      ) : (
+                        tableKey.toUpperCase()
+                      )
+                    }
+                    {getSortIcon(tableKey)}
+                  </div>
+                  {/*tableKey.toUpperCase()*/}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="pagination">
-    <div className="items-per-page"> <span>Items per page:</span>
-  <select onChange={(e) => handleItemsPerPageChange(Number(e.target.value))} value={itemsPerPage}>
-    {itemsPerPageOptions.map((option) => (
-      <option key={option} value={option}>
-        {option}
-      </option>
-    ))}
-  </select></div>
- 
-
-  <span>Page {currentPage} of {totalPages}</span>
-  <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-    Previous
-  </button>
-  <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-    Next
-  </button>
-</div>
-
-  </div>
-  </>
-);
+          </thead>
+          <tbody>
+            {visibleData.map((entry, index) => (
+              <tr key={index}>
+                {tableKeys.map((tKey) => (
+                  <td key={tKey} className="employee-cell">
+                    {entry[tKey]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="pagination">
+          <div className="items-per-page">
+            {" "}
+            <span>Items per page:</span>
+            <select
+              onChange={(e) => handleItemsPerPageChange(Number(e.target.value))}
+              value={itemsPerPage}
+            >
+              {itemsPerPageOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="pagination-pages">   
+          <span >
+            Page {currentPage} of {totalPages}
+          </span>
+          </div>
+        
+          
+   
+      
+          <div className="page-navigation">
+           <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+           >
+            <i className="fa fa-chevron-left"></i>
+          </button>
+            {generatePageNumbers().map((pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => handlePageChange(pageNumber)}
+                className={pageNumber === currentPage ? "active" : ""}
+              >
+               
+                {pageNumber} 
+              </button>
+            ))}
+             <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+         
+          <i className="fa fa-chevron-right"></i>
+          </button>
+          </div>
+          
+         
+        </div>
+      </div>
+    </>
+  );
 };
 export default AllEmployeesTablePaged;

@@ -1,9 +1,19 @@
 import "./FormPage.scss";
 import SideNav from "../../Components/SideNav/SideNav";
 import Header from "../../Components/Header/Header";
-
 import EmployeesStepsForm from "../../Components/Form/EmployeesStepsForm";
 import { useState } from "react";
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
 
 function FormPage() {
   
@@ -22,8 +32,9 @@ function FormPage() {
       <div className="app-container">
         <SideNav />
         <div className="main-container">
-          <Header title="Let's add an employee" />
-          <EmployeesStepsForm closeParentFunction={closeModal}/>
+          <div className="header-container">   <Header title="ADD AN EMPLOYEE" /></div>
+         <div className="form-container">   <EmployeesStepsForm closeParentFunction={closeModal}/></div>
+       
         </div>
      
       </div>

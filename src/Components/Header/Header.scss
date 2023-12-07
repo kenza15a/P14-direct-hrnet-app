@@ -3,6 +3,17 @@
   @include page-title;
   
 }
-.subtitle{
-@include page-subtitle;
+
+
+@media (max-width: $small-screen) {
+  .title{
+    @include page-title;
+    margin-top: 25%;
+    margin-bottom: 1%;
+    color:$third-color;
+    font-size: 2rem;
+    
+  }
+ 
+ 
 }

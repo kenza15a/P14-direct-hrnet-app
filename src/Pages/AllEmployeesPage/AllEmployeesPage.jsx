@@ -4,10 +4,11 @@ import SideNav from "../../Components/SideNav/SideNav";
 import Header from "../../Components/Header/Header";
 import { useFormData } from "../../context/EmployeeDataProvider";
 import { useState } from "react";
-import EmployeesModal from "../../Components/Modal/EmployeesModal";
 import EmployeesStepsForm from "../../Components/Form/EmployeesStepsForm";
 import { mockedEmployees } from "../../data/dataTables";
 import AllEmployeesTablePaged from "../../Components/Table/AllEmployeesPagedTable";
+import  ModalComponent  from "dynamic-modal-library";
+import 'dynamic-modal-library/dist/index.css'
 
 /*
 *
@@ -19,8 +20,7 @@ import AllEmployeesTablePaged from "../../Components/Table/AllEmployeesPagedTabl
 *
 */
 function AllEmployeesPage() {
-  const { emlployeesList } = useFormData();
-  
+  const { employeesList } = useFormData();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   
@@ -36,28 +36,35 @@ function AllEmployeesPage() {
       <div className="app-container">
         <SideNav />
         <div className="main-container">
-          <Header title="All employees" />
+          <Header title="EMPLOYEES  &nbsp;  LIST" />
           <div className="tableControls">
             <div className="pagination"></div>
             <button className="addEmployees"  onClick={openModal}>
               Add new employee
             </button>
           </div>
-          {emlployeesList.length > 0 ? (
-            <AllEmployeesTablePaged data={emlployeesList} />
-          ) : (
-            <div className="mocked-container">
-          {/*<div className="error-no-data">
-              <Message messageText={"Sorry no data available !"} subMessageText={"Click add new employee to start  😃..."} />
-          </div> */}  
+          <div className="table-content">
          
-            <AllEmployeesTablePaged data={mockedEmployees}/>
-          </div>
-          )}
-            {isModalOpen && (
-            <EmployeesModal
+         {employeesList.length > 0 ? (
+           <AllEmployeesTablePaged data={employeesList} />
+         ) : (
+           <div className="mocked-container">
+             {/*<div className="error-no-data">
+             <Message messageText={"Sorry no data available !"} subMessageText={"Click add new employee to start  😃..."} />
+         </div> */}
+
+             <AllEmployeesTablePaged data={mockedEmployees} />
+           </div>
+         )}
+
+         </div>
+       
+          {isModalOpen && (
+            <ModalComponent
               isOpen={isModalOpen}
-              contentComponent={<EmployeesStepsForm closeParentFunction={closeModal} />}
+              contentComponent={
+                <EmployeesStepsForm closeParentFunction={closeModal} />
+              }
               closeFunction={closeModal}
             />
           )}
