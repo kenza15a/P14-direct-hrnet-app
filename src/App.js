@@ -23,13 +23,13 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 400);
   }, []);
   return (
     <>
       <Helmet>
         <title>HR NET</title>
-        {/* You can also include other meta tags or link tags for styles here */}
+     
       </Helmet>
       <BrowserRouter>
         <FormDataProvider>

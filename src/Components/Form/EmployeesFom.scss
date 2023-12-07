@@ -105,7 +105,8 @@ Form{
           @include form-fileds;
           &.select-field{
             padding: 0.6rem;
-            width: 100%;
+            width: 95%;
+            margin-left: 1rem
            }
         }
      

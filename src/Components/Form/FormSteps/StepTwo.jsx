@@ -23,20 +23,20 @@ const StepTwo = (props) => {
       .string()
       .min(3)
       .matches(nameRules, { message: "please insert a correct city" })
-      .required("required"),
+      .required("city required"),
     street: yup
       .string()
       .min(10)
       .matches(streetreg, { message: "please insert a correct street" })
-      .required("required"),
+      .required(" Street required"),
     zipCode: yup
       .number()
       .positive()
       .integer()
       .min(1)
       .max(999999)
-      .required("required"),
-    state: yup.string().required("required field"),
+      .required("ZipCode required"),
+    state: yup.string().required("State field required "),
   });
   const handleSubmit = (values) => {
     props.next(values);
