@@ -51,8 +51,8 @@ const [sorting, setSorting] = useState({
         "state",
         "departement",
       ];
-      
-//THE FUNCTION WE WILL CALL TO FILTER THE DATA BY THE SEARCHED FIELD
+      //search 
+      //THE FUNCTION WE WILL CALL TO FILTER THE DATA BY THE SEARCHED FIELD
 
       const handleFilterChange = (key, value) => {
         //concatenate old filtered values with the new entry 
@@ -69,8 +69,8 @@ const [sorting, setSorting] = useState({
     
         setFilteredData(filtered);
       };
-//set the active search by column 
-//maintaining the active search state for each key 
+    //set the active search by column 
+   //maintaining the active search state for each key 
       const toggleActiveSearch = (column) => {
         setColumnSearchActive((prevState) => ({
           ...prevState,
@@ -107,13 +107,9 @@ const [sorting, setSorting] = useState({
     }
     return null;
   };
-  /*const generatePageNumbers = () => {
-    const pageNumbers = [];
-    for (let i = 1; i <= totalPages; i++) {
-      pageNumbers.push(i);
-    }
-    return pageNumbers;
-  };*/
+
+
+  //pagination 
   const generatePageNumbers = () => {
     const pageNumbers = [];
     

@@ -94,7 +94,7 @@ function EmployeesStepsForm({ closeParentFunction }) {
         <ModalComponent
           isOpen={isModalOpen}
           contentComponent={
-            <span className="modal-Message"> <Message messageText={"EMPLOYEE ADDED SUCCESSFULLY 😀 ! "} /></span>
+            <span className="modal-Message"> <Message messageText={"EMPLOYEE ADDED SUCCESSFULLY 😀! "} /></span>
            
           }
           closeFunction={() => {
