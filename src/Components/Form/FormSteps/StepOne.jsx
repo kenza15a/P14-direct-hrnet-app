@@ -56,7 +56,6 @@ const StepOne = (props) => {
               <CostumField
                 label="First Name"
                 name="firstName"
-                for="First Name"
                 type="text"
                 placeholder="First Name"
                 className="input-field"

@@ -6,7 +6,7 @@ function CostumField(props) {
   return (
     <>
       <div className="lab-and-field">
-        <label htmlFor={name}> {label}</label>
+        <label htmlFor={label} aria-labelledby={label}> {label}</label>
         <div className="one-field-groupe">
           <Field
             type={type}

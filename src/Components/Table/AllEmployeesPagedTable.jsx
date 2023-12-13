@@ -8,7 +8,7 @@ const AllEmployeesTablePaged = ({data}) => {
   const [filterValues, setFilterValues] = useState({}); //filtered values for each column
   const [filteredData, setFilteredData] = useState(data); //filtered data based on filtered values 
   //display or not the search input
-//const [activeSearch,setActiveSearch]=useState(false);
+
 const [columnSearchActive, setColumnSearchActive] = useState({});
 //pagination 
 const itemsPerPageOptions = [3, 7, 10, 20]; // Options for items per page
