@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 import CostumField from "../../CostumField/CostumField";
 import { Formik, Form } from "formik";
 import "../EmployeesStepsForm";
@@ -7,7 +7,7 @@ import * as yup from "yup";
 const nameRules = /^[A-Za-zÀ-ÿ\s'-]{1,50}$/;
 
 /*
-
+The first step of the form
 *
 *
 *
@@ -16,7 +16,7 @@ const nameRules = /^[A-Za-zÀ-ÿ\s'-]{1,50}$/;
 */
 const StepOne = (props) => {
     const handleSubmit = (values) => {
-      props.next(values);
+      props.next(values); // we pass the data to the next step
     };
   
     const formSchema = yup.object().shape({

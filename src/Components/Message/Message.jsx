@@ -1,5 +1,11 @@
 import React from "react";
 import "./Message.scss";
+
+
+/**
+ * 
+ * A customizable message component 
+ */
 function Message({ messageText, subMessageText }) {
   return (
     <>

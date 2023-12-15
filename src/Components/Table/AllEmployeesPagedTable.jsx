@@ -3,14 +3,24 @@ import { useEffect } from "react";
 import "./AllEmployeesTable.scss";
 import React, { useState } from "react";
 import 'font-awesome/css/font-awesome.min.css';
+
+/***
+ * The paged table component 
+ * to display all employees data 
+ */
 const AllEmployeesTablePaged = ({data}) => {
+
+
 //SEARCH BY COLUMN 
   const [filterValues, setFilterValues] = useState({}); //filtered values for each column
   const [filteredData, setFilteredData] = useState(data); //filtered data based on filtered values 
-  //display or not the search input
 
+
+  //Trigger the display of the search input by column 
 const [columnSearchActive, setColumnSearchActive] = useState({});
-//pagination 
+
+
+//Pagination 
 const itemsPerPageOptions = [3, 7, 10, 20]; // Options for items per page
 const [itemsPerPage, setItemsPerPage] = useState(itemsPerPageOptions[0]);
 const [currentPage, setCurrentPage] = useState(1);
@@ -19,8 +29,14 @@ const [currentPage, setCurrentPage] = useState(1);
 const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 const startIndex = (currentPage - 1) * itemsPerPage;
 const endIndex = startIndex + itemsPerPage;
-//the data we will show according to the index found using the number of items per page 
+
+
+//The data we will show according to the index found using the number of items per page 
 const visibleData = filteredData.slice(startIndex, endIndex);
+
+/**
+ * Helpers section
+ */
 const handlePageChange = (page) => {
   setCurrentPage(page);
 };
@@ -51,8 +67,8 @@ const [sorting, setSorting] = useState({
         "state",
         "departement",
       ];
-      //search 
-      //THE FUNCTION WE WILL CALL TO FILTER THE DATA BY THE SEARCHED FIELD
+  //search 
+  //THE FUNCTION WE WILL CALL TO FILTER THE DATA BY THE SEARCHED FIELD
 
       const handleFilterChange = (key, value) => {
         //concatenate old filtered values with the new entry 
@@ -151,7 +167,7 @@ const [sorting, setSorting] = useState({
           <span >
             Page {currentPage} of {totalPages}
           </span>
-          </div>
+       </div>
         
           
    
@@ -180,10 +196,8 @@ const [sorting, setSorting] = useState({
          
           <i className="fa fa-chevron-right"></i>
           </button>
-          </div>
-          
-         
-        </div>
+          </div>  
+     </div>
         <table className="employees-table">
           <thead>
             <tr>

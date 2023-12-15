@@ -7,16 +7,10 @@ import Message from "../Message/Message";
 import ModalComponent from "dynamic-modal-library";
 /*
 *
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
+A step form which contains three steps 
+we pass the data of each step to the other using setdata
+we pass from a step to an other using the setCurrentStep hook
+
 
 */
 
@@ -39,8 +33,7 @@ function EmployeesStepsForm({ closeParentFunction }) {
 
   const openModal = () => {
     setIsModalOpen(true);
-    console.log("steps form");
-    console.log(isModalOpen);
+   
   };
 
   const closeModal = () => {

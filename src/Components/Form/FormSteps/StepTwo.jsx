@@ -6,7 +6,7 @@ import SelectComponent from "../../SelectComponent/SelectComponent";
 import { states } from "../../../data/dataTables";
 import * as yup from "yup";
 /*
-
+Second step of the form
 *
 *
 *

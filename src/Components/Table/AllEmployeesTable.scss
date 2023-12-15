@@ -89,10 +89,10 @@
             position:relative;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            gap: 0.5rem;
-            padding: 1rem;
-           font-size: 0.8rem;
+            justify-content:flex-start;
+            gap: 0.9rem;
+            padding: 0.7rem;
+            font-size: 0.8rem;
            
             & .table-filter { //input in table
               border: none;

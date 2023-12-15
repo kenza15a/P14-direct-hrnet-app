@@ -4,6 +4,10 @@ import icon2 from "../../assets/img/icons/employees.png";
 import icon1 from "../../assets/img/icons/Form.png";
 import "./sideNav.scss";
 import { Link } from "react-router-dom";
+
+/***
+ * Navigation bar component 
+ */
 function SideNav() {
   return (
     <>

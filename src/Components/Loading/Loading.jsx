@@ -2,7 +2,9 @@ import React from 'react';
 import './Loading.scss'; // Import the CSS file for styling
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+/**
+ *Loading component
+ */
 const Loading = () => { 
   
   const [dots, setDots] = useState('');

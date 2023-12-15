@@ -4,7 +4,8 @@ import Employee from "../models/employee";
 /*
 *
 *
-*
+*A context provider to pass the data of the added employee 
+from th first page to the second
 *
 *
 *
@@ -20,7 +21,7 @@ export const FormDataProvider = ({ children }) => {
   const [employeesList, setEmployeesList] = useState([]);
 
   const addFormData = (formData) => {
-
+//passing by the data model 
     const employee = new Employee(
       formData.firstName,
       formData.lastName,

@@ -1,8 +1,14 @@
 import { Field, ErrorMessage } from "formik";
 import React from "react";
 import './SelectComponent.scss'
+
+
+/**
+ * 
+ *A general select component that we are using for the states and departement component in this project 
+ */
 function SelectComponent(props) {
-  const { label, name, options,defaultValue, ...rest } = props;
+  const { label, name, options,defaultValue, ...rest } = props; // destructed props 
   return (
     <>
       <div className="select-lab-and-field">
